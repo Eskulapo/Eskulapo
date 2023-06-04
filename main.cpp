@@ -37,6 +37,8 @@ void lekser(std::string s)
     // iterujemy przez stringa s
     for (int i = 0; i < s.length(); i++)
     {
+        //kopiujemy litere do wyjscia
+        wyjscie += s[i];
         //sprawdzamy czy nasz znak to kropka lub przecinek
         if (s[i] == '.' || s[i] == ',')
         {
@@ -44,7 +46,7 @@ void lekser(std::string s)
             if (i < s.length() - 1 && s[i + 1] != ' ')
             {
                 //dodajemy spacje
-                s+= ' ';
+                wyjscie+= ' ';
             }
         }
     }
@@ -69,7 +71,7 @@ int main()
         input += buffor + "\n";
     } while (true);
     // wywolujemy funkcje
-    //numerowanie(input);
+    numerowanie(input);
     lekser(input);
     return 0;
 }
