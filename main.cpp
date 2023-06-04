@@ -31,18 +31,24 @@ void numerowanie(std::string s)
 // nasz lekser, analogicznie do numerowania
 void lekser(std::string s)
 {
+    // string na tekst wyjsciowy
+    std::string wyjscie;
+
     // iterujemy przez stringa s
     for (int i = 0; i < s.length(); i++)
     {
         //sprawdzamy czy nasz znak to kropka lub przecinek
         if (s[i] == '.' || s[i] == ',')
         {
-            // oraz czy nie stoi po nim spacja
+            // oraz czy nie stoi po nim spacja (o ile cokolwiek stoi)
             if (i < s.length() - 1 && s[i + 1] != ' ')
             {
+                //dodajemy spacje
+                s+= ' ';
             }
         }
     }
+    std::cout<<wyjscie<<std::endl;
 }
 
 int main()
@@ -63,7 +69,7 @@ int main()
         input += buffor + "\n";
     } while (true);
     // wywolujemy funkcje
-    numerowanie(input);
-
+    //numerowanie(input);
+    lekser(input);
     return 0;
 }
